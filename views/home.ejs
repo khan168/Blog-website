@@ -1,0 +1,15 @@
+<%- include('partials/header.ejs') %>
+
+    <h1>Home</h1>
+    <p>
+        <%=content%>
+    </p>
+    <%posts.forEach(function(e){ %>
+    <h1><%=e.title%></h1>
+    <p ><%=e.body.substring(0,100) + "..."%>
+    <a href="/posts/<%=e._id%>">Read more</a>
+    </p>
+    <%}) %>
+    <button class="btn" style="margin-top: 50px;"><a href="/compose">Write a blog</a></button>
+
+<%- include('partials/footer.ejs') %>
